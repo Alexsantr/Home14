@@ -2,6 +2,7 @@ package tests;
 
 
 import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -9,17 +10,9 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-
+@Tag("demode")
 public class TestsBspb extends TestSetting {
 
-
-//    @BeforeAll
-//    static void beforeAll() {
-//        Configuration.browserSize = "1920x1080";
-//        Configuration.pageLoadStrategy = "eager";
-//        Configuration.baseUrl = "https://www.bspb.ru/";
-//       Configuration.holdBrowserOpen = true;
-//    }
 
 
     @Test

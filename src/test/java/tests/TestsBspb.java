@@ -1,6 +1,5 @@
 package tests;
 
-
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 @Tag("demode")
 public class TestsBspb extends TestSetting {
-
 
 
     @Test
@@ -51,6 +49,18 @@ public class TestsBspb extends TestSetting {
         Selenide.open("");
         $("a[href='/foreign-trade']").click();
         $(".css-uyawat").shouldHave(text("ВЭД любой сложности"));
+    }
+
+    @Test
+    public void testUnsuccessfulAuthorization() {
+        Selenide.open("https://pwa.bspb.ru");
+        $("#phoneNumber").setValue("79101911212");
+        $("#password").setValue("1234");
+        $(byText("Продолжить")).click();
+        $("#input-code").setValue("1235");
+        $(byText("Подтвердить")).click();
+        $(byText("Неверный код")).shouldBe(visible);
+
     }
 
 

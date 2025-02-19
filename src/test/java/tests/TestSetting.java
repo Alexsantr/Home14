@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
+
 public class TestSetting {
 
     @BeforeEach
@@ -21,7 +22,6 @@ public class TestSetting {
         Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";
         Configuration.browser = System.getProperty("browser");
         Configuration.browserVersion = System.getProperty("browserVersion", "126");
-//        Configuration.holdBrowserOpen = true;
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

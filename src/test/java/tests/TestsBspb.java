@@ -1,67 +1,84 @@
 package tests;
 
-import com.codeborne.selenide.Selenide;
+
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import pages.*;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 
 @Tag("demode")
-public class TestsBspb extends TestSetting {
-
+@Feature("Основные функциональности")
+public class TestsBspb extends TestBase {
 
     @Test
+    @DisplayName("Проверка вкладок по меню при открытии главной страницы,")
+    @Story("Открытие главной страницы")
     public void testMainPageOpens() {
-        open("");
-        $("body").shouldBe(visible);
+        MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
+        mainPage.examinationMainFindText();
+
     }
 
-
     @Test
+    @DisplayName("Проверка перехода на страницу 'Бизнес'")
+    @Story("Переход на страницу 'Бизнес'")
     public void testBusinessBankPage() {
-        Selenide.open("");
-        $("a[href='/business']").click();
-        $(".css-ra2taq").shouldBe(text("Зарегистрируйте бизнес бесплатно в БСПБ"));
-
+        MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
+        mainPage.navigateToBusinessPage();
+        BusinessPage businessPage = new BusinessPage();
+        businessPage.verifyHeaderText("Зарегистрируйте бизнес бесплатно в БСПБ");
     }
 
     @Test
+    @DisplayName("Проверка перехода на страницу 'Контакты'")
+    @Story("Переход на страницу 'Контакты'")
+
     public void testContactsPage() {
-        Selenide.open("");
-        $("a[href='/feedback']").click();
-        $("h1").shouldHave(text("Контакты для связи"));
+        MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
+        mainPage.navigateToContactsPage();
+        ContactsPage contactsPage = new ContactsPage();
+        contactsPage.verifyHeaderText("Контакты для связи");
     }
 
-
     @Test
+    @DisplayName("Проверка перехода на страницу 'Офисы и банкоматы'")
+    @Story("Переход на страницу 'Офисы и банкоматы'")
+
     public void testOfficeBankPage() {
-        Selenide.open("");
-        $(byText("Офисы и банкоматы")).click();
-        $(".css-1uhajv").shouldHave(text("Офисы и банкоматы"));
+        MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
+        mainPage.navigateToOfficesAtmsPage();
+        OfficesAtmsPage officesAtmsPage = new OfficesAtmsPage();
+        officesAtmsPage.verifyHeaderText("Офисы и банкоматы");
     }
 
     @Test
+    @DisplayName("Проверка перехода на страницу 'ВЭД'")
+    @Story("Переход на страницу 'ВЭД'")
+
     public void testVedBankPage() {
-
-        Selenide.open("");
-        $("a[href='/foreign-trade']").click();
-        $(".css-uyawat").shouldHave(text("ВЭД любой сложности"));
+        MainPage mainPage = new MainPage();
+        mainPage.openMainPage();
+        mainPage.navigateToForeignTradePage();
+        ForeignTradePage foreignTradePage = new ForeignTradePage();
+        foreignTradePage.verifyHeaderText("ВЭД любой сложности");
     }
 
     @Test
+    @DisplayName("Проверка неудачной авторизации")
+    @Story("Неудачная авторизация")
+
     public void testUnsuccessfulAuthorization() {
-        Selenide.open("https://pwa.bspb.ru");
-        $("#phoneNumber").setValue("79101911212");
-        $("#password").setValue("1234");
-        $(byText("Продолжить")).click();
-        $("#input-code").setValue("1235");
-        $(byText("Подтвердить")).click();
-        $(byText("Неверный код")).shouldBe(visible);
-
+        AuthorizationPage authorizationPage = new AuthorizationPage();
+        authorizationPage.openPage();
+        authorizationPage.enterCredentials("79101911212", "1234");
+        authorizationPage.enterCode("1235");
+        authorizationPage.verifyErrorMessage();
     }
-
-
 }

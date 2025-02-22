@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 
-public class TestSetting {
+public class TestBase {
 
     @BeforeEach
     void setup() {

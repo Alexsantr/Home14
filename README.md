@@ -6,25 +6,28 @@
 ## Проект включает в себя:
 
 - **UI-тесты** с использованием Selenium и Selenide.
-- **API-тесты** с использованием RestAssured.
 - Интеграцию с **Allure** для создания подробных отчетов.
 - Настройку CI/CD через **Jenkins**.
-- Интеграцию с **Jira** для управления задачами и баг-трекинга.
 - Поддержку нескольких тестовых фреймворков: **JUnit 5** и **TestNG**.
 
 ---
 ## Технологии и инструменты
-![This is an image](/icons/Gradle.png)![This is an image](/icons/Intelij_IDEA.png)![This is an image](/icons/Selenide.png)![This is an image](/icons/Selenoid.png)![This is an image](/icons/JUnit5.png)![This is an image](/icons/Jenkins.png)![This is an image](/icons/Allure_Report.png)![This is an image](/icons/AllureTestOps.png)![This is an image](/icons/Telegram.png)![This is an image](/icons/Jira.png)</br></br>
+[![Gradle](/icons/Gradle.png)](https://gradle.org/)
+[![IntelliJ IDEA](/icons/Intelij_IDEA.png)](https://www.jetbrains.com/idea/)
+[![Selenide](/icons/Selenide.png)](https://selenide.org/)
+[![Selenoid](/icons/Selenoid.png)](https://selenide.org/)
+[![JUnit5](/icons/JUnit5.png)](https://junit.org/junit5/)
+[![Jenkins](/icons/Jenkins.png)](https://www.jenkins.io/)
+[![Allure Report](/icons/Allure_Report.png)](https://qameta.io/)
+[![Telegram](/icons/Telegram.png)](https://web.telegram.org/a/)
 
 
 - **Язык программирования**: Java
 - **Тестирование UI**: Selenium, Selenide
-- **Тестирование API**: RestAssured
 - **Фреймворки для тестирования**: JUnit 5, TestNG
 - **Система сборки**: Gradle
 - **Отчеты**: Allure
 - **CI/CD**: Jenkins
-- **Управление задачами**: Jira
 
 ---
 

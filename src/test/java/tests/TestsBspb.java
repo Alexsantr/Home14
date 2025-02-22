@@ -1,7 +1,6 @@
 package tests;
 
 
-import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -10,8 +9,7 @@ import pages.*;
 
 
 @Tag("demode")
-@Feature("Основные функциональности")
-public class TestsBspb extends TestBase {
+public class TestsBspb extends BaseTest {
 
     @Test
     @DisplayName("Проверка вкладок по меню при открытии главной страницы,")

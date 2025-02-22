@@ -12,11 +12,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 
-public class TestBase {
+public class BaseTest {
 
     @BeforeEach
     void setup() {
-        Configuration.baseUrl = "https://www.bspb.ru/";
+        Configuration.baseUrl = "https://www.bspb.ru";
         Configuration.browserSize = System.getProperty("browserSize");
         Configuration.timeout = 10000;
         Configuration.remote = "https://user1:1234@" + System.getProperty("remoteHost") + "/wd/hub";

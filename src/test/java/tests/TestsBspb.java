@@ -1,7 +1,7 @@
 package tests;
 
 
-import io.qameta.allure.Story;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,7 @@ public class TestsBspb extends BaseTest {
 
     @Test
     @DisplayName("Проверка вкладок по меню при открытии главной страницы,")
-    @Story("Открытие главной страницы")
+    @Step("Открытие главной страницы")
     public void testMainPageOpens() {
         MainPage mainPage = new MainPage();
         mainPage.openMainPage();
@@ -23,7 +23,7 @@ public class TestsBspb extends BaseTest {
 
     @Test
     @DisplayName("Проверка перехода на страницу 'Бизнес'")
-    @Story("Переход на страницу 'Бизнес'")
+    @Step("Переход на страницу 'Бизнес'")
     public void testBusinessBankPage() {
         MainPage mainPage = new MainPage();
         mainPage.openMainPage();
@@ -34,8 +34,7 @@ public class TestsBspb extends BaseTest {
 
     @Test
     @DisplayName("Проверка перехода на страницу 'Контакты'")
-    @Story("Переход на страницу 'Контакты'")
-
+    @Step("Переход на страницу 'Контакты'")
     public void testContactsPage() {
         MainPage mainPage = new MainPage();
         mainPage.openMainPage();
@@ -46,7 +45,7 @@ public class TestsBspb extends BaseTest {
 
     @Test
     @DisplayName("Проверка перехода на страницу 'Офисы и банкоматы'")
-    @Story("Переход на страницу 'Офисы и банкоматы'")
+    @Step("Переход на страницу 'Офисы и банкоматы'")
 
     public void testOfficeBankPage() {
         MainPage mainPage = new MainPage();
@@ -58,7 +57,7 @@ public class TestsBspb extends BaseTest {
 
     @Test
     @DisplayName("Проверка перехода на страницу 'ВЭД'")
-    @Story("Переход на страницу 'ВЭД'")
+    @Step("Переход на страницу 'ВЭД'")
 
     public void testVedBankPage() {
         MainPage mainPage = new MainPage();
@@ -70,7 +69,7 @@ public class TestsBspb extends BaseTest {
 
     @Test
     @DisplayName("Проверка неудачной авторизации")
-    @Story("Неудачная авторизация")
+    @Step("Неудачная авторизация")
 
     public void testUnsuccessfulAuthorization() {
         AuthorizationPage authorizationPage = new AuthorizationPage();
